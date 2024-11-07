@@ -1,0 +1,68 @@
+.main h2 {
+    color: #014D99;
+    font-weight: 700;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.tab {
+    display: none;
+}
+
+.tabs {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.accordion_body {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.tab.active {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.buttons button {
+    display: flex;
+    border: none;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    color: #014D99;
+    background-color: white;
+}
+
+.buttons button.active {
+    background-color: #014D99;
+    color: white;
+}
+
+@media only screen and (max-width: 960px) {
+    .main {
+        min-height: 100vh;
+    }
+}

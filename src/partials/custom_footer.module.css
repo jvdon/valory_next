@@ -1,0 +1,98 @@
+.footer {
+    margin: 0;
+
+    background: #014D99;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    color: white;
+    min-width: 100vw;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.row main p {
+    text-align: center;
+}
+
+.footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer section header h2 {
+    font-weight: 900;
+}
+
+.footer section main {
+    gap: 2px;
+}
+
+.footer section main p {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer section main a {
+    text-decoration-color: white;
+}
+
+
+.valory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.valory img {
+    width: 96px;
+}
+
+.valory p {
+    width: 80%;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redes {
+    display: flex;
+    gap: 20px;
+}
+
+.redes img {
+    width: 48px;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 960px) {
+    .footer {
+        width: 100vw;
+        min-width: 100vw;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+}

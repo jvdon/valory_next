@@ -1,0 +1,42 @@
+.accordion {
+    width: 100%;
+
+    height: fit-content;
+    text-align: center;
+}
+
+.accordion * {
+    width: 100%;
+}
+
+.accordion button {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: none;
+    background-color: white;
+}
+
+.accordion header button h3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    color: #014D99;
+    margin-right: auto;
+}
+
+.accordion svg {
+    width: 32px;
+    height: 32px;
+
+    stroke: #014D99;
+    margin-left: auto;
+
+}
+
+.accordion main {
+    text-align: justify;
+    border-left: 1px solid #014D99;
+    border-right: 1px solid #014D99;
+    border-bottom: 1px solid #014D99;
+
+}

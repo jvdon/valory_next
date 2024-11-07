@@ -1,0 +1,97 @@
+.linkedin,
+.main section {
+    height: max-content;
+    width: 100%;
+    gap: 20px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linkedin,
+.main section:nth-child(odd) {
+    background-color: #588abc;
+    color: white;
+}
+
+.main section:nth-child(even) {
+    background-color: whitesmoke;
+    color: #014D99;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin h1,
+.linkedin h2,
+.linkedin h3,
+.linkedin h4,
+.main h1,
+.main h2,
+.main h3,
+.main h4 {
+    text-align: center;
+}
+
+.main main {
+    display: flex;
+    flex-direction: row;
+}
+
+.main main img {
+    height: 480px;
+}
+
+.linkedin main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.row h4 {
+    width: 300px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 960px) {
+    .main {
+        width: 100vw;
+
+    }
+
+    .row {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        row-gap: 20px;
+        column-gap: 20px;
+
+    }
+
+    .main main img {
+        width: 100%;
+    }
+
+    .main section main {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,257 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+}
+
+.main {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+.carousel {
+  position: relative;
+
+  height: 640px;
+  width: 100vw;
+}
+
+.carousel_button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 64px;
+
+  color: white;
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+
+  z-index: 3000;
+}
+
+.carousel_button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.carousel_button.left {
+  left: 24px;
+}
+
+.carousel_button.right {
+  right: 24px;
+}
+
+.carousel_item {
+  display: none;
+}
+
+.carousel_item.active {
+  position: relative;
+
+  display: block;
+}
+
+.carousel_item img {
+  width: 100%;
+  height: 640px;
+}
+
+.carousel-caption {
+  position: absolute;
+
+  bottom: 8px;
+  left: 16px;
+
+
+  background-color: #00000020;
+  height: fit-content;
+  text-align: left;
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 24px;
+  border-radius: 45px;
+
+  z-index: 3000;
+}
+
+.financa_container {
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+
+  column-gap: 40px;
+}
+
+.financa_content section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  width: 60%;
+  height: max-content;
+}
+
+.financa_container section main {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.financa_container section img {
+  width: 100%;
+  height: 480px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 20px;
+}
+
+.financa_container section h2 {
+  text-align: center;
+  color: #59c5f4;
+}
+
+.financa_content {
+  width: 100%;
+  background: linear-gradient(90deg, #86CFE0 0%, #1C69B7 100%);
+  color: white;
+  border-radius: 45px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.financa_content h4 {
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.trust_container {
+  width: 60%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  column-gap: 30px;
+}
+
+.trust_container section {
+  width: 40%;
+}
+
+.trust_container section h3 {
+  color: #1C69B7F2;
+  font-weight: 700;
+}
+
+.trust_container section h4 {
+  text-align: start;
+}
+
+.trust_container img {
+  width: 480px;
+}
+
+.consultoria_container {
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+
+  column-gap: 40px;
+}
+
+.consultoria_container section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  width: 40%;
+  height: max-content;
+}
+
+.consultoria_container section main {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.consultoria_container section h2 {
+  color: #1C69B7F2;
+  font-weight: 700;
+}
+
+.consultoria_container section h3 {
+  width: 50%;
+}
+
+.company_table {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 20px;
+}
+
+.company_table img {
+  width: 156px;
+  aspect-ratio: 16/9;
+}
+
+
+@media only screen and (max-width: 960px) {
+  .trust_container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .financa_container {
+    flex-direction: column;
+  }
+
+  .company_table {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .trust_container img {
+    width: 100%;
+  }
+}

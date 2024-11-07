@@ -1,0 +1,99 @@
+.App {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+    gap: 10px;
+}
+
+.main {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.main h2 {
+    color: #014D99;
+}
+
+.form {
+    background: #588abc;
+    width: 40%;
+
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+
+    border-radius: 15px;
+}
+
+.form h3 {
+    text-align: center;
+    font-weight: 800;
+}
+
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.page label {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checks {
+    width: 90%;
+    display: flex;
+
+    justify-content: center;
+    gap: 20px;
+}
+
+.checks label {
+    width: 400px;
+}
+
+.checks button {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    background-color: #588abc;
+    text-decoration: underline;
+
+    font-weight: bold;
+
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+}
+
+.field {
+    width: 400px;
+}
+
+.page label input[type="submit"] {
+    background-color: #014D99;
+    color: #fff;
+}
