@@ -11,6 +11,7 @@ import { CurrencyInput } from 'react-currency-mask';
 import { InputMask } from 'primereact/inputmask';
 import { Dialog } from "primereact/dialog"
 
+
 export default function Assessoria() {
     const [termosModalShow, setTermosModalShow] = useState(false);
     const [privacidadeModalShow, setPrivacidadeModalShow] = useState(false);
@@ -91,7 +92,12 @@ export default function Assessoria() {
                     </div>
                     <div className={`${style.page}`}>
                         <label>
-                            Melhor horário para contato: <input type="time" name="" />
+                            Melhor horário para contato: <input type="time" name="" onChange={(e) => {
+                                let updatedJson = formData;
+                                updatedJson["horario"] = e.target.value;
+                                console.log(e.target.value)
+                                setFormData(updatedJson)
+                            }} />
                         </label>
                     </div>
                     <div className={`${style.checks}`}>
@@ -112,7 +118,13 @@ export default function Assessoria() {
                     </div>
                     <div className={`${style.page}`}>
                         <label>
-                            <input type="submit" name="ENVIAR" onClick={(e) => {
+                            <input type="submit" name="ENVIAR" onClick={async (e) => {
+                                e.preventDefault();
+                                fetch("/api/leads", {
+                                    "method": "POST",
+                                    "body": JSON.stringify(formData)
+                                })
+
                                 console.log(formData)
                             }} />
                         </label>
