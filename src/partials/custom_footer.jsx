@@ -18,8 +18,8 @@ export default function Footer() {
                     </header>
                     <main>
                         <p>Integridade ética</p>
-                        <p>Sobre nós</p>
-                        <p>Carreiras</p>
+                        <a href='/#about' ><p>Sobre nós</p></a>
+                        <a href='/joinus'><p>Carreiras</p></a>
                     </main>
                 </section>
                 <section>
@@ -27,7 +27,7 @@ export default function Footer() {
                         <h2>Fale com a Valory</h2>
                     </header>
                     <main>
-                        <p>Contato</p>
+                        <a href='/contato'><p>Contato</p></a>
                     </main>
                 </section>
                 <section>
@@ -63,7 +63,7 @@ export default function Footer() {
                             <img src="/images/logo_reclame_aqui.png" alt="" />
                         </a>
                     </div>
-                    <p>Valory © LTDA Endereço: Avenida Paulista, 302 - São Paulo/SP </p>
+                    <p>Valory &copy; LTDA Endereço: Avenida Paulista, 302 - São Paulo/SP </p>
                     <p>CNPJ sob o nº 53.524.768/0001-20</p>
                     <p>A Valory é uma plataforma digital de Soluções Financeiras tendo como principal produto a Negociação
                         de Dívidas. Valory tem como objetivo central devolver o acesso ao crédito para as famílias

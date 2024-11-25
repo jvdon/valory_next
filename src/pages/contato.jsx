@@ -14,7 +14,7 @@ export default function Contato() {
                     <h3>Fale com a <b>Valory</b></h3>
                 </div>
                 <div className={style["content"]}>
-                <div className={style.side}>
+                    <div className={style.side}>
                         <h1>Sou Cliente</h1>
                         <div className={style.info}>
                             <Mail></Mail>

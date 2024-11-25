@@ -7,11 +7,19 @@
     height: 100px;
     padding: 0px 10px 0px 10px;
     overflow: hidden;
+    background-color: white;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3100;
+
 }
 
 .header img {
     /* width: 10%; */
     height: 100px;
+
 }
 
 .menu {
@@ -19,7 +27,7 @@
     align-items: center;
     width: fit-content;
     height: 100%;
-    gap: 15px;
+    gap: 50px;
 }
 
 .menu a {
@@ -55,6 +63,10 @@
     margin: 0;
 }
 
+.menu_button {
+    display: none;
+}
+
 @media only screen and (max-width: 960px) {
     .header {
         width: 100vw;
@@ -67,13 +79,47 @@
         margin-bottom: 10px;
     }
 
+    .logo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu_button {
+        display: block;
+        height: 50px;
+
+        border: none;
+        background-color: white;
+    }
+
     .menu {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(2, auto);
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
 
         justify-content: center;
-        align-items: center;
+
+        background-color: white;
+
+        width: 100vw;
+        height: 50vh;
+
+        position: fixed;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -80%);
+    }
+
+    .menu a {
+        text-decoration: none;
     }
 
     .assessoria_button {

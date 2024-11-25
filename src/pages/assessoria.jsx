@@ -28,8 +28,6 @@ export default function Assessoria() {
         "contato": false
     })
 
-    // return <TrabalheConosco/>;
-
     return (
         <div className={style.App}>
             <Header />
@@ -95,37 +93,44 @@ export default function Assessoria() {
                             Melhor horário para contato: <input type="time" name="" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["horario"] = e.target.value;
-                                console.log(e.target.value)
                                 setFormData(updatedJson)
                             }} />
                         </label>
                     </div>
                     <div className={`${style.checks}`}>
+                        <input type="checkbox" onChange={(e) => {
+                            let updatedJson = formData;
+                            updatedJson["termos"] = e.target.checked;
+                            setFormData(updatedJson)
+                        }} />
                         <label>
-                            <input type="checkbox" onChange={(e) => {
-                                let updatedJson = formData;
-                                updatedJson["termos"] = e.target.checked;
-                                setFormData(updatedJson)
-                            }} /> Aceito o <button onClick={() => setPrivacidadeModalShow(true)}> Aviso de Privacidade</button> e os <button onClick={() => setTermosModalShow(true)} >Termos e Condições</button> além da Política de Cookies.
+                            Aceito o <button onClick={() => setPrivacidadeModalShow(true)}> Aviso de Privacidade</button> e os <button onClick={() => setTermosModalShow(true)} >Termos e Condições</button> além da Política de Cookies.
                         </label>
+                        <input type="checkbox" onChange={(e) => {
+                            let updatedJson = formData;
+                            updatedJson["contato"] = e.target.checked;
+                            setFormData(updatedJson)
+                        }} />
                         <label>
-                            <input type="checkbox" onChange={(e) => {
-                                let updatedJson = formData;
-                                updatedJson["contato"] = e.target.checked;
-                                setFormData(updatedJson)
-                            }} /> Aceito ser contatado por meio de uma conta institucional e verificada da valory.
+                            Aceito ser contatado por meio de uma conta institucional e verificada da valory.
                         </label>
                     </div>
                     <div className={`${style.page}`}>
                         <label>
                             <input type="submit" name="ENVIAR" onClick={async (e) => {
                                 e.preventDefault();
+
+
+
+
                                 fetch("/api/leads", {
                                     "method": "POST",
                                     "body": JSON.stringify(formData)
                                 })
 
-                                console.log(formData)
+
+                                self.location.reload();
+
                             }} />
                         </label>
                     </div>

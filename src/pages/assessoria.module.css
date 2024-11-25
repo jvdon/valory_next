@@ -5,10 +5,12 @@
     justify-content: space-evenly;
 
     gap: 10px;
+
+    height: max-content;
 }
 
 .main {
-    height: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -22,9 +24,9 @@
 
 .form {
     background: #588abc;
-    width: 40%;
+    width: 80%;
+    height: 500px;
 
-    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -34,6 +36,8 @@
     color: whitesmoke;
 
     border-radius: 15px;
+
+    gap: 20px;
 }
 
 .form h3 {
@@ -53,7 +57,7 @@
 }
 
 .page label {
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
@@ -96,4 +100,90 @@
 .page label input[type="submit"] {
     background-color: #014D99;
     color: #fff;
+    margin-bottom: 20px;
+}
+
+.page label input {
+    border: none;
+    border-radius: 15px;
+
+    height: 40px;
+    font-size: 16px;
+
+    width: 100%;
+}
+
+.page label select {
+    border: none;
+    border-radius: 15px;
+    height: 40px;
+    /* font-size: 24px; */
+
+    width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+    .main {
+        width: 100vw;
+
+        min-height: max-content;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .form {
+        width: 100%;
+        height: max-content;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        margin-bottom: 20px;
+
+    }
+
+    .page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .page label {
+        width: 90%;
+    }
+
+    .page label input {
+        width: 95%;
+    }
+
+    .page label select {
+        width: 95%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+
+        row-gap: 10px;
+    }
+
+    .field h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+
+    .field h3 {
+        text-align: justify;
+        font-size: 18px;
+        font-weight: normal;
+    }
 }

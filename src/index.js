@@ -7,6 +7,8 @@ import Ajuda from './pages/ajuda';
 import Assessoria from './pages/assessoria';
 import JoinUs from './pages/joinus';
 import Contato from './pages/contato';
+import LeadView from './pages/leads';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +20,7 @@ root.render(
         <Route path='/assessoria' element={<Assessoria />} />
         <Route path='/joinus' element={<JoinUs/>}/>
         <Route path='/contato' element={<Contato/>}/>
+        <Route path='/leads' element={<LeadView/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

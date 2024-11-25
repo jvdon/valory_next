@@ -8,7 +8,9 @@
 
     align-items: flex-start;
     color: white;
-    min-width: 100vw;
+    
+    width: 100vw;
+    max-width: 100vw;
 }
 
 .row {
@@ -61,7 +63,7 @@
 }
 
 .valory p {
-    width: 80%;
+    width: 90%;
     text-align: center;
 }
 
@@ -84,8 +86,10 @@
 @media only screen and (max-width: 960px) {
     .footer {
         width: 100vw;
-        min-width: 100vw;
+        max-width: 100vw;
     }
+
+    
 
     .row {
         display: grid;

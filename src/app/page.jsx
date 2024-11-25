@@ -5,7 +5,7 @@ import Header from '@/partials/custom_header';
 import Footer from '@/partials/custom_footer';
 
 import { ChevronLeft, ChevronRight, Headset, Speech, Users } from 'lucide-react';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -29,7 +29,6 @@ export default function Home() {
   let prevSlide = (e) => {
     if (currId > 0) {
       currId -= 1;
-      console.log("HGoo")
     } else {
       currId = 2;
     }
@@ -40,12 +39,20 @@ export default function Home() {
   let nextSlide = (e) => {
     if (currId < products.length - 1) {
       currId += 1;
-      console.log("HGoo")
     } else {
       currId = 0;
     }
     setCurrId(currId);
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => nextSlide(), 5000);
+
+    //Clearing the interval
+    return () => clearInterval(interval);
+
+  })
+
 
   return (
     <div className={style["App"]}>
@@ -85,21 +92,23 @@ export default function Home() {
               <h2>Mudamos suas finanças juntos</h2>
             </header>
             <main>
-              <div className={style.financa_content}>
-                <h3>Assessoria gratuita</h3>
-                <h4>Cadastre-se e receba sua primeira assessoria gratuita</h4>
-              </div>
-              <div className={style.financa_content}>
-                <h3>Parcelas fixas</h3>
-                <h4>Planos com poupanças mensais que cabem no seu bolso</h4>
-              </div>
-              <div className={style.financa_content}>
-                <h3>Desconto nas suas dívidas</h3>
-                <h4>Quite sua dívida com desconto e de adeus ao nome sujo</h4>
-              </div>
-              <div className={style.financa_content}>
-                <h3>Acompanhamento até o fim</h3>
-                <h4>Ficamos do seu lado até receber sua carta de quitação</h4>
+              <div className={style.cards}>
+                <div className={style.financa_content}>
+                  <h3>Assessoria gratuita</h3>
+                  <h4>Cadastre-se e receba sua primeira assessoria gratuita</h4>
+                </div>
+                <div className={style.financa_content}>
+                  <h3>Parcelas fixas</h3>
+                  <h4>Planos com poupanças mensais que cabem no seu bolso</h4>
+                </div>
+                <div className={style.financa_content}>
+                  <h3>Desconto nas suas dívidas</h3>
+                  <h4>Quite sua dívida com desconto e de adeus ao nome sujo</h4>
+                </div>
+                <div className={style.financa_content}>
+                  <h3>Acompanhamento até o fim</h3>
+                  <h4>Ficamos do seu lado até receber sua carta de quitação</h4>
+                </div>
               </div>
             </main>
           </section>
@@ -142,7 +151,7 @@ export default function Home() {
           <img src="/images/logo_bradesco.png" alt="" />
           <img src="/images/logo_pic_pay.png" alt="" />
           <img src="/images/logo_itau.png" alt="" />
-          <img src="/images/logo_banco_do_brasil.png" alt="" />
+          <img src="/images/logo_banco_do_brasil.jpg" alt="" />
           <img src="/images/logo_santander.png" alt="" />
           <img src="/images/logo_procon.png" alt="" />
           <img src="/images/logo_inter.png" alt="" />
