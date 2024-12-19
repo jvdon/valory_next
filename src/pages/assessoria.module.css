@@ -25,7 +25,7 @@
 .form {
     background: #588abc;
     width: 80%;
-    height: 500px;
+    height: max-content;
 
 
     display: flex;
@@ -38,6 +38,8 @@
     border-radius: 15px;
 
     gap: 20px;
+
+    padding: 20px;
 }
 
 .form h3 {
@@ -88,20 +90,28 @@
 }
 
 .grid {
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
 .field {
-    width: 400px;
+    width: 550px;
 }
+
 
 .page label input[type="submit"] {
     background-color: #014D99;
     color: #fff;
-    margin-bottom: 20px;
 }
+
+.page label input[type="submit"]:hover {
+    transform: scale(0.9);
+}
+
 
 .page label input {
     border: none;
@@ -111,15 +121,21 @@
     font-size: 16px;
 
     width: 100%;
+
+    padding-left: 10px;
 }
 
 .page label select {
     border: none;
     border-radius: 15px;
     height: 40px;
-    /* font-size: 24px; */
 
     width: 100%;
+    padding-left: 10px;
+}
+
+.warning {
+    color: rgb(150, 16, 16);
 }
 
 @media only screen and (max-width: 960px) {

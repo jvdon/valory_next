@@ -16,15 +16,16 @@ export default function Header() {
                     setShown(!shown)
                 }
                 }>
-                    <Menu />
+                    <Menu size={48} />
                 </button>
             </a>
             <div className={style.menu + " " + (shown ? style.active : "")}>
                 <a href="/#about"><h2>Sobre Nós</h2></a>
                 <a href="/ajuda"><h2>Ajuda</h2></a>
                 <a href="/contato"><h2>Contato</h2></a>
-                <a href="/joinus"><h2>Trabalhe Conosco</h2></a>
-                <a className={style.assessoria_button} href="/assessoria"><h2>Assessoria gratuita</h2></a>
+                <a className={style.assessoria_button} href="/assessoria">
+                    <h2>Assessoria gratuita</h2>
+                </a>
             </div>
         </header>
     );

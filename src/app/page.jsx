@@ -3,13 +3,11 @@
 import style from "@/pages/App.module.css";
 import Header from '@/partials/custom_header';
 import Footer from '@/partials/custom_footer';
-
-import { ChevronLeft, ChevronRight, Headset, Speech, Users } from 'lucide-react';
-import { useEffect, useState } from "react";
+import Carousel from "@/partials/carousel";
 
 export default function Home() {
 
-  let [currId, setCurrId] = useState(0);
+
 
   const products = [
     {
@@ -26,32 +24,7 @@ export default function Home() {
     },
   ]
 
-  let prevSlide = (e) => {
-    if (currId > 0) {
-      currId -= 1;
-    } else {
-      currId = 2;
-    }
 
-    setCurrId(currId);
-  }
-
-  let nextSlide = (e) => {
-    if (currId < products.length - 1) {
-      currId += 1;
-    } else {
-      currId = 0;
-    }
-    setCurrId(currId);
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => nextSlide(), 5000);
-
-    //Clearing the interval
-    return () => clearInterval(interval);
-
-  })
 
 
   return (
@@ -59,103 +32,75 @@ export default function Home() {
       <Header />
       <main className={style.main}>
 
-        <div className={style.carousel}>
-          <button className={`${style.carousel_button} ${style.left}`} onClick={(e) => prevSlide(e)} >
-            <ChevronLeft size={32} />
-          </button>
-          {
-            products.map((product, index) => {
-              return (
-                <div key={product.title} className={`${style.carousel_item} ${(index == currId ? style.active : "")}`}>
-                  <img src={product.image_url} />
-                  <h3 className={style["carousel-caption"]}>{product.title}</h3>
-                </div>
-              )
-            })
-          }
-          <button className={`${style.carousel_button} ${style.right}`} onClick={(e) => nextSlide(e)} >
-            <ChevronRight size={32} />
-          </button>
-        </div>
+        <Carousel items={products} />
 
-        <div className={style.financa_container} id='about'>
-          <section>
-            <header>
-              <Users color='#59c5f4' size={48} />
-            </header>
-            <main>
-              <img src="/images/side_view_cute_couple_outdoors.jpeg" alt="" />
-            </main>
-          </section>
-          <section>
-            <header>
+
+
+        <div className={style.stuff}>
+          <div className={style.container}>
+            <img src="/images/side_view_cute_couple_outdoors.jpeg" alt="" />
+            <section>
               <h2>Mudamos suas finanças juntos</h2>
-            </header>
-            <main>
+
               <div className={style.cards}>
-                <div className={style.financa_content}>
+                <div className={style.content}>
                   <h3>Assessoria gratuita</h3>
                   <h4>Cadastre-se e receba sua primeira assessoria gratuita</h4>
                 </div>
-                <div className={style.financa_content}>
+                <div className={style.content}>
                   <h3>Parcelas fixas</h3>
                   <h4>Planos com poupanças mensais que cabem no seu bolso</h4>
                 </div>
-                <div className={style.financa_content}>
+                <div className={style.content}>
                   <h3>Desconto nas suas dívidas</h3>
                   <h4>Quite sua dívida com desconto e de adeus ao nome sujo</h4>
                 </div>
-                <div className={style.financa_content}>
+                <div className={style.content}>
                   <h3>Acompanhamento até o fim</h3>
                   <h4>Ficamos do seu lado até receber sua carta de quitação</h4>
                 </div>
               </div>
-            </main>
-          </section>
-        </div>
+            </section>
+          </div>
 
-        <div className={style.consultoria_container}>
-          <section>
-            <header>
-              <h2>Consultoria</h2>
-              <Headset color='#59c5f4' size={72} />
-            </header>
-            <main>
-              <h3>Fornecemos serviços inteligentes de consultoria  para solucionar suas dívidas.</h3>
-            </main>
-          </section>
-          <section>
-            <header>
-              <h2>Negociação</h2>
-              <Speech color='#59c5f4' size={72} />
-            </header>
-            <main>
-              <h3>Planos personalizados que cabem no seu bolso!</h3>
-            </main>
-          </section>
-        </div>
+          <div className={`${style.container} ${style.reverse}`}>
+            <img src="/images/pessoas-de-coworking-trabalhando-juntas.png" alt="" />
+            <section>
+              <h2>Por que confiar na Valory?</h2>
 
-        <div className={style.trust_container}>
-          <img src="/images/pessoas-de-coworking-trabalhando-juntas.png" alt="" />
-          <section>
-            <h3>Por que confiar na Valory?</h3>
-            <h4>
-              Com três anos de trajetória consolidada, somos referência em soluções financeiras. Nossos especialistas estão preparados para transformar suas dívidas em oportunidades. Iniciamos nossa operação no Brasil com o compromisso de oferecer negociações transparentes e confiáveis. Conte conosco para uma parceria sólida e bem-sucedida.
-            </h4>
-          </section>
+              <div className={style.cards}>
+                <div className={style.content}>
+                  <h3>Três anos de trajetória consolidada</h3>
+                  <h4>Com três anos de atuação, somos referência em soluções financeiras de confiança.</h4>
+                </div>
+                <div className={style.content}>
+                  <h3>Transformação de Dívidas em Oportunidades</h3>
+                  <h4>Ajudamos a converter dívidas em novas possibilidades financeiras.</h4>
+                </div>
+                <div className={style.content}>
+                  <h3>Compromisso com Transparência</h3>
+                  <h4>Negociamos de forma clara e honesta, sempre com total transparência.</h4>
+                </div>
+                <div className={style.content}>
+                  <h3>Parceria para o Sucesso</h3>
+                  <h4>Estabelecemos relações sólidas para alcançar resultados duradouros.</h4>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
 
         <div className={style.company_table}>
-          <img src="/images/logo_serasa.png" alt="" />
-          <img src="/images/logo_caixa.png" alt="" />
-          <img src="/images/logo_bradesco.png" alt="" />
-          <img src="/images/logo_pic_pay.png" alt="" />
-          <img src="/images/logo_itau.png" alt="" />
-          <img src="/images/logo_banco_do_brasil.jpg" alt="" />
-          <img src="/images/logo_santander.png" alt="" />
-          <img src="/images/logo_procon.png" alt="" />
-          <img src="/images/logo_inter.png" alt="" />
-          <img src="/images/logo_nubank.png" alt="" />
+          <img src="/images/logo_serasa.png" alt="Serasa" />
+          <img src="/images/logo_caixa.png" alt="Caixa" />
+          <img src="/images/logo_bradesco.png" alt="Bradesco" />
+          <img src="/images/logo_pic_pay.png" alt="PicPay" />
+          <img src="/images/logo_itau.png" alt="Itau" />
+          <img src="/images/logo_banco_do_brasil.jpg" alt="Banco Do Brasil" />
+          <img src="/images/logo_santander.png" alt="Santander" />
+          <img src="/images/logo_procon.png" alt="Procon" />
+          <img src="/images/logo_inter.png" alt="Inter" />
+          <img src="/images/logo_nubank.png" alt="NuBank" />
 
         </div>
       </main>

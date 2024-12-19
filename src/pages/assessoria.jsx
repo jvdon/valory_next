@@ -37,39 +37,44 @@ export default function Assessoria() {
                 <div className={style.form}>
                     <h3>Preencha suas informações e de suas dívidas para consultarmos sua situação</h3>
                     <div className={`${style.page}`}>
-                        <label>
-                            Nome:<input type="text" onChange={(e) => {
+                        <label id='nome'>
+                            Nome:
+                            <input type="text" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["nome"] = e.target.value;
                                 setFormData(updatedJson)
-                            }} />
+                            }} placeholder='John' />
                         </label>
-                        <label>
-                            Sobrenome:<input type="text" onChange={(e) => {
+                        <label id='sobrenome'>
+                            Sobrenome:
+                            <input type="text" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["sobrenome"] = e.target.value;
                                 setFormData(updatedJson)
-                            }} /></label>
+                            }} placeholder='Doe' /></label>
                     </div>
                     <div className={`${style.page}`}>
-                        <label>
-                            Numero de Telefone:<InputMask mask='(99) 99999-9999' type="text" onChange={(e) => {
+                        {/* Telefone */}
+                        <label id='telefone'>
+                            Numero de Telefone:
+                            <InputMask mask='(99) 99999-9999' type="text" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["telefone"] = e.target.value;
                                 setFormData(updatedJson)
-                            }} />
+                            }} placeholder='(xx) xxxx-xxxx' />
                         </label>
-                        <label>
+                        {/* Email */}
+                        <label id='email'>
                             E-Mail:<input type="text" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["email"] = e.target.value;
                                 setFormData(updatedJson)
-                            }} />
+                            }} placeholder='email@example.com' />
                         </label>
                     </div>
                     {/* Institução */}
                     <div className={`${style.page}`}>
-                        <label>
+                        <label id='instituicao'>
                             A qual instituição você deve:<br />
                             <select defaultValue={"0"} onChange={(e) => {
                                 let updatedJson = formData;
@@ -79,18 +84,19 @@ export default function Assessoria() {
                                 {bancos.intituicoes.map(banco => <option key={banco} value={banco} >{banco}</option>)}
                             </select>
                         </label>
-                        <label>
+                        <label id='valor'>
                             Qual valor total das dividas:
                             <CurrencyInput onChangeValue={(e, value, maskedValue) => {
                                 let updatedJson = formData;
                                 updatedJson["valor"] = value;
                                 setFormData(updatedJson)
-                            }} />
+                            }} defaultValue="0" />
                         </label>
                     </div>
                     <div className={`${style.page}`}>
-                        <label>
-                            Melhor horário para contato: <input type="time" name="" onChange={(e) => {
+                        <label id='horario'>
+                            Melhor horário para contato:
+                            <input type="time" name="" onChange={(e) => {
                                 let updatedJson = formData;
                                 updatedJson["horario"] = e.target.value;
                                 setFormData(updatedJson)
@@ -102,8 +108,8 @@ export default function Assessoria() {
                             let updatedJson = formData;
                             updatedJson["termos"] = e.target.checked;
                             setFormData(updatedJson)
-                        }} />
-                        <label>
+                        }} required />
+                        <label id='termos'>
                             Aceito o <button onClick={() => setPrivacidadeModalShow(true)}> Aviso de Privacidade</button> e os <button onClick={() => setTermosModalShow(true)} >Termos e Condições</button> além da Política de Cookies.
                         </label>
                         <input type="checkbox" onChange={(e) => {
@@ -111,7 +117,7 @@ export default function Assessoria() {
                             updatedJson["contato"] = e.target.checked;
                             setFormData(updatedJson)
                         }} />
-                        <label>
+                        <label id='contato'>
                             Aceito ser contatado por meio de uma conta institucional e verificada da valory.
                         </label>
                     </div>
@@ -120,16 +126,37 @@ export default function Assessoria() {
                             <input type="submit" name="ENVIAR" onClick={async (e) => {
                                 e.preventDefault();
 
+                                let keys = Object.keys(formData);
+                                let okays = [];
+
+                                for (const key of keys) {
+                                    const element = formData[key];
+
+                                    if (element == "" || element == false) {
+                                        let elm = document.getElementById(key);
+
+                                        let warning = document.createElement("p");
+                                        warning.className = style.warning;
+                                        warning.innerText = "Por favor preencha esse campo"
+
+                                        elm.appendChild(warning)
+                                        okays.push(false);
+                                    } else {
+                                        okays.push(true);
+                                    }
+
+                                }
+
+                                if (okays.every((e) => e == true)) {
+                                    fetch("/api/leads", {
+                                        "method": "POST",
+                                        "body": JSON.stringify(formData)
+                                    })
 
 
+                                    self.location.reload();
+                                }
 
-                                fetch("/api/leads", {
-                                    "method": "POST",
-                                    "body": JSON.stringify(formData)
-                                })
-
-
-                                self.location.reload();
 
                             }} />
                         </label>

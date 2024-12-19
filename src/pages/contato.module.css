@@ -1,88 +1,114 @@
 .main {
     display: flex;
-    flex-direction: column;
-
-}
-
-.main .top {
-    position: relative;
-}
-
-.main .top img {
-    width: 100%;
-    height: 640px;
-}
-
-.main .top h3 {
-    width: 300px;
-    position: absolute;
-    left: 70px;
-    top: 20px;
-    font-size: 64px;
-    color: white;
-}
-
-.top h3 b {
-    font-weight: 900;
-}
-
-.content {
-    width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: max-content;
+    margin-top: 20px;
 
-    gap: 20px;
+    overflow: hidden;
+}
+
+.top img {
+    max-width: 46vw;
+    max-height: 85vh;
 }
 
 .info {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-
-    gap: 20px;
-
-}
-
-.info a {
-    color: black;
-}
-
-.side {
+    width: 54vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    text-align: start;
-    gap: 20px;
 }
+
+.controls {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+
+.controls button {
+    border: 1px solid #025096;
+    border-radius: 45px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    color: #025096;
+}
+
+.controls button:hover {
+    transform: scale(1.2);
+    transition: all 250ms;
+}
+
+.controls button.selected {
+    background-color: #2871bb ;
+    color: white;
+    border: none;
+}
+
+.tabs {
+    height: 85vh;
+    width: 100%;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.selected {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+    row-gap: 20px;
+}
+
+.row {
+    width: 450px;
+    display: flex;
+    gap: 10px;
+
+    align-items: center;
+    justify-content: start;
+}
+
+.row p {
+    font-size: 24px;
+}
+
+.row a {
+    color: black;
+}
+
 
 @media only screen and (max-width: 960px) {
     .main {
-        width: 100vw;
-
-    }
-
-    .content {
         display: flex;
         flex-direction: column;
-        gap: 10px;
 
-        margin-bottom: 20px;
-        margin-top: 20px;
+        align-items: center;
+
+        row-gap: 30px;
+
     }
 
-    .main .top img {
-        height: 480px;
+    .top img {
+        width: 100vw;
+        max-width: 100vw;
     }
 
-    .main .top h3 {
-        top: 40px;
-        left: 10px;
-        font-size: 56px;
+    .tabs {
+        height: 35vmax;
+    }
+
+    .info {
+        row-gap: 40px;
     }
 }

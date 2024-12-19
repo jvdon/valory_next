@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .header {
+    width: 100vw;
+    max-width: 99vw;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    padding: 0px 10px 0px 10px;
-    overflow: hidden;
+    padding: 5px 10px 5px 10px;
     background-color: white;
 
     position: sticky;
@@ -14,12 +16,11 @@
     left: 0;
     z-index: 3100;
 
+    overflow: hidden;
 }
 
 .header img {
-    /* width: 10%; */
     height: 100px;
-
 }
 
 .menu {
@@ -34,7 +35,11 @@
     color: #0A4077;
     text-decoration: none;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    transform: scale(0.9);
 }
 
 .menu h2 {
@@ -93,6 +98,10 @@
 
         border: none;
         background-color: white;
+    }
+
+    .menu_button:hover {
+        transform: scale(0.8);
     }
 
     .menu {
