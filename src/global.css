@@ -17,3 +17,8 @@ body {
 li::marker {
     content: "";
 }
+
+img {
+    pointer-events: none;
+    object-fit: cover;
+}

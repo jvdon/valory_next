@@ -33,7 +33,7 @@ export default function Assessoria() {
             <Header />
             <main className={style.main}>
                 <h1>De o primeiro passo</h1>
-                <h2>Muda sua historia com os créditos</h2>
+                <h2>Mude sua história com os créditos</h2>
                 <div className={style.form}>
                     <h3>Preencha suas informações e de suas dívidas para consultarmos sua situação</h3>
                     <div className={`${style.page}`}>
@@ -144,7 +144,6 @@ export default function Assessoria() {
                                     } else {
                                         okays.push(true);
                                     }
-
                                 }
 
                                 if (okays.every((e) => e == true)) {
@@ -182,7 +181,7 @@ export default function Assessoria() {
                     <div className={style.field}>
                         <h2>Consultorias e Educação Financeira de Qualidade</h2>
                         <h3>
-                            Com a Valory você terá acesso aos melhores cosultores do mercado , onde podera ter consultorias de educação financeira de qualidade.                        </h3>
+                            Com a Valory você terá acesso aos melhores consultores do mercado , onde podera ter consultorias de educação financeira de qualidade.                        </h3>
                     </div>
                 </div>
             </main>

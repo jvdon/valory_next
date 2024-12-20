@@ -36,7 +36,7 @@ export default function Home() {
 
 
 
-        <div className={style.stuff}>
+        <div id="about" className={style.stuff}>
           <div className={style.container}>
             <img src="/images/side_view_cute_couple_outdoors.jpeg" alt="" />
             <section>

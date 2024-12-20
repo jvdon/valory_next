@@ -1,13 +1,11 @@
 .App {
-  max-width: 100vw;
+  max-width: 99vw;
   text-align: center;
   display: flex;
   flex-direction: column;
 
   gap: 20px;
-
-  overflow: hidden;
-
+  contain: paint;
 }
 
 .main {
@@ -38,6 +36,13 @@
   height: fit-content;
 
   gap: 20px;
+}
+
+.container h2 {
+  text-transform: capitalize;
+  font-weight: 900;
+
+  color: #1c69b7;
 }
 
 .cards {
@@ -104,6 +109,7 @@
 
   .container img {
     width: 95vw;
+    aspect-ratio: 16/9;
     padding: 10px;
   }
 

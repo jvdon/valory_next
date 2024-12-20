@@ -1,6 +1,8 @@
 .carousel {
     max-width: 99vw;
     margin: 0;
+
+    height: 880px;
 }
 
 .carousel_item {
@@ -9,6 +11,8 @@
 
     max-height: 960px;
     aspect-ratio: 24/10;
+
+    height: 880px;
 }
 
 .carousel_item.active {
@@ -18,6 +22,7 @@
 .carousel-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .carousel_controls {
@@ -106,13 +111,20 @@
 
 @media only screen and (max-width: 960px) {
 
+    .carousel {
+        height: 400px;
+    }
+
     .button {
         display: none;
     }
 
     .carousel_item img {
         width: 100%;
-        height: 560px;
+        height: 400px;
+
+        min-width: 100%;
+        object-fit: fill;
     }
 
     .bottom {

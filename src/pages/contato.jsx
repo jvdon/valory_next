@@ -33,45 +33,53 @@ export default function Contato() {
                     <div className={style.tabs}>
                         <div className={`${style.tab} ${((id == 0 ? style.selected : ""))}`}>
                             <div className={style.row}>
-                                <Mail size={32}></Mail>
+                                <Mail color="#025096" size={56}></Mail>
                                 <p>
-                                    <a href="mailto://contato@valorybrasil.com">
+                                    <a href="mailto:contato@valorybrasil.com">
                                         contato@valorybrasil.com
                                     </a>
                                 </p>
                             </div>
                             <div className={style.row}>
-                                <Phone size={32}></Phone>
-                                <p><a href="tell:+5511911421466">+55 (11) 91142-1466</a></p>
+                                <Phone color="#025096" size={56}></Phone>
+                                <p><a href="tel:+5511911421466">+55 (11) 91142-1466</a></p>
                             </div>
                             <div className={style.row}>
-                                <MapPin size={32}></MapPin>
-                                <p>Avenida Paulista, 302 - São Paulo, Sp</p>
+                                <MapPin color="#025096" size={56}></MapPin>
+                                <p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista,+302+-+Bela+Vista,+São+Paulo+-+SP&hl=pt-br">
+                                        Avenida Paulista, 302 - São Paulo, Sp
+                                    </a>
+                                </p>
                             </div>
                         </div>
 
                         <div className={`${style.tab} ${((id == 1 ? style.selected : ""))}`}>
                             <div className={style.row}>
-                                <Mail color="#025096" size={32}></Mail>
+                                <Mail color="#025096" size={56}></Mail>
                                 <p>
-                                    <a href="mailto://contato@valorybrasil.com">
+                                    <a href="mailto:contato@valorybrasil.com">
                                         comercial@valorybrasil.com
                                     </a>
                                 </p>
                             </div>
                             <div className={style.row}>
-                                <Phone color="#025096" size={32}></Phone>
-                                <p><a href="tell:+551120613453">+55 (11) 2061-3453</a></p>
+                                <Phone color="#025096" size={56}></Phone>
+                                <p><a href="tel:+551120613453">+55 (11) 2061-3453</a></p>
                             </div>
                             <div className={style.row}>
-                                <MapPin color="#025096" size={32}></MapPin>
-                                <p>Avenida Paulista, 302 - São Paulo, Sp</p>
+                                <MapPin color="#025096" size={56}></MapPin>
+                                <p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista,+302+-+Bela+Vista,+São+Paulo+-+SP&hl=pt-br">
+                                        Avenida Paulista, 302 - São Paulo, Sp
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
+            </main >
             <Footer />
-        </div>
+        </div >
     );
 }
